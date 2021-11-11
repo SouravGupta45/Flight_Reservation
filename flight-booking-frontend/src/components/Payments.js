@@ -49,13 +49,13 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
     // const data = await api.post("/razorpay", { fare });
     // //   .then((t) => t.json());
 
-    console.log(data.data.amount);
+    
 
     const options = {
-      key: process.env.KEY_ID,
-      currency: data.data.currency,
-      amount: data.data.amount.toString(),
-      order_id: data.data.id,
+      // key: process.env.KEY_ID,
+      // currency: data.data.currency,
+      // amount: data.data.amount.toString(),
+      // order_id: data.data.id,
       name: "Flight Booking",
       description: "Complete payment to book the flight",
       //   image: "http://localhost:1337/logo.svg",
