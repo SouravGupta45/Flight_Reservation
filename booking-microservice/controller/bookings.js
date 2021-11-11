@@ -8,10 +8,10 @@ const crypto = require("crypto");
 var customId = require("custom-id");
 require("dotenv").config();
 
-var instance = new Razorpay({
-  key_id: process.env.KEY_ID,
-  key_secret: process.env.KEY_SECRET,
-});
+// var instance = new Razorpay({
+//   key_id: process.env.KEY_ID,
+//   key_secret: process.env.KEY_SECRET,
+// });
 
 module.exports = {
   getAllBookings: async (req, res, next) => {
@@ -69,49 +69,49 @@ module.exports = {
     res.status(200).json(bookings);
   },
 
-  payment: async (req, res, next) => {
-    console.log(req.body.fare);
-    const payment_capture = 1;
-    const amount = req.body.fare * 100;
-    console.log(amount);
-    const currency = "INR";
-    const receipt = shortid.generate();
-    try {
-      const response = await instance.orders.create({
-        amount,
-        currency,
-        receipt,
-        payment_capture,
-      });
-      console.log(response);
-      res.status(200).json({
-        id: response.id,
-        currency: response.currency,
-        amount: response.amount,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  },
+  // payment: async (req, res, next) => {
+  //   console.log(req.body.fare);
+  //   const payment_capture = 1;
+  //   const amount = req.body.fare * 100;
+  //   console.log(amount);
+  //   const currency = "INR";
+  //   const receipt = shortid.generate();
+  //   try {
+  //     const response = await instance.orders.create({
+  //       amount,
+  //       currency,
+  //       receipt,
+  //       payment_capture,
+  //     });
+  //     console.log(response);
+  //     res.status(200).json({
+  //       id: response.id,
+  //       currency: response.currency,
+  //       amount: response.amount,
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
 
-  verifyPayment: (req, res) => {
-    // do a validation
-    const secret = process.env.SECRET;
-
-    console.log(req.body);
-
-    const shasum = crypto.createHmac("sha256", secret);
-    shasum.update(JSON.stringify(req.body));
-    const digest = shasum.digest("hex");
-
-    console.log(digest, req.headers["x-razorpay-signature"]);
-
-    if (digest === req.headers["x-razorpay-signature"]) {
-      console.log("request is legit");
-      // process it
-    } else {
-      // pass it
-    }
-    res.json({ status: "ok" });
-  },
+  // verifyPayment: (req, res) => {
+  //   // do a validation
+  //   const secret = process.env.SECRET;
+  //
+  //   console.log(req.body);
+  //
+  //   const shasum = crypto.createHmac("sha256", secret);
+  //   shasum.update(JSON.stringify(req.body));
+  //   const digest = shasum.digest("hex");
+  //
+  //   console.log(digest, req.headers["x-razorpay-signature"]);
+  //
+  //   if (digest === req.headers["x-razorpay-signature"]) {
+  //     console.log("request is legit");
+  //     // process it
+  //   } else {
+  //     // pass it
+  //   }
+  //   res.json({ status: "ok" });
+  // },
 };

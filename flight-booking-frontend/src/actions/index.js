@@ -188,7 +188,7 @@ export const storeFlight = (flightId) => {
   console.log(flightId);
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://localhost:9202/flights/" + flightId);
+      const res = await axios.get("http://localhost:9201/flights/" + flightId);
       console.log(res.data);
       const flight = res.data;
       dispatch({
