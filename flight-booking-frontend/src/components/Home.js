@@ -304,7 +304,7 @@ export class Home extends Component {
                             </svg>
                           </span>
                         </td>
-                        <td style={{ fontSize: "1.4rem" }}>{flight.to}</td>
+                        <td style={{ fontSize: "1.4rem" }}>{flight.dest}</td>
                         <td style={{ fontSize: "1.4rem" }}>
                           {/* <span style={{ float: "right" }}> */}
                           &#8377;{flight.fare}
