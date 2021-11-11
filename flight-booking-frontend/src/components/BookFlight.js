@@ -72,7 +72,7 @@ class BookFlight extends Component {
           </Breadcrumb.Item>
           <Breadcrumb.Item active>Traveller Details</Breadcrumb.Item>
         </Breadcrumb>
-        {this.state.userDetails.hasOwnProperty("_id") ? (
+        {this.state.userDetails.hasOwnProperty('_id') ? (
           <Modal
             show={this.state.show}
             onHide={this.handleClose}
@@ -126,7 +126,7 @@ class BookFlight extends Component {
           </Modal>
         ) : null}
         <h1>Book Flight</h1>
-        {this.props.flight.hasOwnProperty("_id") ? (
+        {this.props.flight.hasOwnProperty('_id') ? (
           <>
             <Card style={{ marginBottom: "2rem" }}>
               <Card.Header>{this.props.flight.name}</Card.Header>

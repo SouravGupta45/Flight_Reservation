@@ -142,12 +142,13 @@ export class Home extends Component {
   }
 
   bookNow(flightId) {
-    this.props.storeFlight(flightId);
+    
 
     if (!this.props.isAuth) {
       // this.props.storeFlight(flightId);
       this.handleShow();
     } else {
+      this.props.storeFlight(flightId);
       this.props.history.push("/book");
     }
   }

@@ -16,5 +16,5 @@ router
   .get(BookingsController.getUserDetailBookings);
 
 //router.route("/razorpay").post(BookingsController.payment);
-router.route("/verification").post(BookingsController.verifyPayment);
+// router.route("/verification").post(BookingsController.verifyPayment);
 module.exports = router;

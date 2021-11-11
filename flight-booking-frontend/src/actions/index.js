@@ -188,7 +188,7 @@ export const storeFlight = (flightId) => {
   console.log(flightId);
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://localhost:9000/flights/" + flightId);
+      const res = await axios.get("http://localhost:9202/flights/" + flightId);
       console.log(res.data);
       const flight = res.data;
       dispatch({
@@ -257,7 +257,7 @@ export const cancelBooking = (bookingId) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
-        "http://localhost:9100/bookings/" + bookingId
+        "http://localhost:9202/bookings/" + bookingId
       );
       console.log(res.data.success);
       dispatch({
@@ -353,7 +353,7 @@ export const getBookings = (userDetailId) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(
-        "http://localhost:9100/bookings/userDetails/" + userDetailId
+        "http://localhost:9202/bookings/userDetails/" + userDetailId
       );
       console.log(res.data);
       dispatch({
@@ -375,7 +375,7 @@ export const bookFlight = (user, flight) => {
   return async (dispatch) => {
     try {
       console.log(user, flight);
-      const res = await axios.post("http://localhost:9100/bookings", {
+      const res = await axios.post("http://localhost:9202/bookings", {
         user,
         flight,
       });
