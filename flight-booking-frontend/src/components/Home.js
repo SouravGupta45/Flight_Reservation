@@ -174,7 +174,7 @@ export class Home extends Component {
       <video autoPlay muted loop style={{position: 'fixed',right: 0,left:0,width: '100%' }}>
           <source src={video} type="video/mp4"/>
             </video>
-        <div className="col" style={{ marginLeft: "530px",marginTop:'100px' }}>
+        <div className="col" style={{ marginLeft: "230px",marginTop:'100px' }}>
           <Breadcrumb>
             <Breadcrumb.Item active>Search Your Flight Here </Breadcrumb.Item>
           </Breadcrumb>

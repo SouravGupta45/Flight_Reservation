@@ -180,7 +180,7 @@ router.route("/search").post((req, res) => {
   // console.log(startDate);
   // console.log(endDate);
   console.log(date)
-  Flight.find({from:})
+  Flight.find({ from, to, date })
     .exec()
     .then((flights) => res.status(200).json(flights))
     .catch((err) => res.status(500).json("Error: " + err));

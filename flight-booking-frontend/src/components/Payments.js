@@ -25,7 +25,7 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
   let history = useHistory();
 
   const api = axios.create({
-    baseURL: `http://localhost:9100/bookings`,
+    baseURL: `http://localhost:9201/bookings`,
   });
   function getEmail() {
     if (user.method === "local") {
@@ -37,17 +37,17 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
     }
   }
   async function displayRazorpay() {
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
+    // const res = await loadScript(
+    //   "https://checkout.razorpay.com/v1/checkout.js"
+    // );
 
-    if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
-    console.log(fare);
-    const data = await api.post("/razorpay", { fare });
-    //   .then((t) => t.json());
+    // if (!res) {
+    //   alert("Razorpay SDK failed to load. Are you online?");
+    //   return;
+    // }
+    // console.log(fare);
+    // const data = await api.post("/razorpay", { fare });
+    // //   .then((t) => t.json());
 
     console.log(data.data.amount);
 
@@ -72,8 +72,8 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
         email: getEmail(),
       },
     };
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
+    // const paymentObject = new window.Razorpay(options);
+    // paymentObject.open();
   }
   return (
     <div>
