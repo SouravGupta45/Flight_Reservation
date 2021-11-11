@@ -14,7 +14,7 @@ var flightSchema = new Schema({
     type: String,
     required: true,
   },
-  to: {
+  dest: {
     type: String,
     required: true,
   },

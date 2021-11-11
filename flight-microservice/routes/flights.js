@@ -173,14 +173,10 @@ router.route("/:id").patch((req, res) => {
  */
 router.route("/search").post((req, res) => {
   const from = req.body.from;
-  const to = req.body.to;
+  const dest = req.body.to;
   const date = req.body.date;
-  // const startDate = Date.parse(req.body.date);
-  // const endDate = startDate + 24 * 60 * 60 * 1000;
-  // console.log(startDate);
-  // console.log(endDate);
-  console.log(date)
-  Flight.find({ from })
+  console.log(req.body)
+  Flight.find({ from, dest, date })
     .exec()
     .then((flights) => res.status(200).json(flights))
     .catch((err) => res.status(500).json("Error: " + err));
