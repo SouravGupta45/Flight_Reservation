@@ -48,8 +48,9 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
     // console.log(fare);
     // const data = await api.post("/razorpay", { fare });
     // //   .then((t) => t.json());
-
-    
+    clearBooking();
+    bookFlight(userDetails, flight);
+    history.push("/successpage");
 
     const options = {
       // key: process.env.KEY_ID,
@@ -68,9 +69,9 @@ function Payments({ flight, user, userDetails, bookFlight, clearBooking }) {
         await bookFlight(userDetails, flight);
         history.push("/successpage");
       },
-      prefill: {
-        email: getEmail(),
-      },
+      // prefill: {
+      //   email: getEmail(),
+      // },
     };
     // const paymentObject = new window.Razorpay(options);
     // paymentObject.open();
