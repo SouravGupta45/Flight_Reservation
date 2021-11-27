@@ -93,7 +93,7 @@ class BookFlight extends Component {
                     {this.props.flight.airlines} {this.props.flight.name}
                   </Card.Title>
                   <Card.Text>
-                    From : {this.props.flight.from} To : {this.props.flight.to}
+                    From : {this.props.flight.from} To : {this.props.flight.dest}
                     <br />
                     Fare : &#8377;{this.props.flight.fare} <br />
                     Date : {this.props.flight.date.substring(0, 10)}
@@ -173,7 +173,7 @@ class BookFlight extends Component {
                           </span>
                         </td>
                         <td style={{ fontSize: "1.8rem" }}>
-                          {this.props.flight.to}
+                          {this.props.flight.dest}
                         </td>
                         <td style={{ fontSize: "1.8rem" }}>
                           {/* <span style={{ float: "right" }}> */}

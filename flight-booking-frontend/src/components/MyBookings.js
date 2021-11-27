@@ -74,9 +74,9 @@ class MyFlights extends Component {
     this.setState({ loadingCheckIn: true });
 
     axios
-      .post("http://localhost:9100/create-pdf", booking)
+      .post("http://localhost:9202/create-pdf", booking)
       .then(() =>
-        axios.get("http://localhost:9100/fetch-pdf", {
+        axios.get("http://localhost:9202/fetch-pdf", {
           responseType: "blob",
         })
       )
@@ -156,7 +156,7 @@ class MyFlights extends Component {
                               </span>
                             </td>
                             <td style={{ fontSize: "1.2rem" }}>
-                              {booking.flight.to}
+                              {booking.flight.dest}
                             </td>
                             <td style={{ fontSize: "1.2rem" }}>
                               {booking.flight.date.substring(0, 10)}

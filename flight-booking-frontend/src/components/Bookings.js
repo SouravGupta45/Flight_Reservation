@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Alert from "@material-ui/lab/Alert";
 
 const api = axios.create({
-  baseURL: `http://localhost:9201/bookings`,
+  baseURL: `http://localhost:9202/bookings`,
 });
 
 function Flights() {
@@ -24,7 +24,7 @@ function Flights() {
     },
     {
       title: "Destination",
-      field: "flight.to",
+      field: "flight.dest",
     },
     { title: "Date", field: "flight.date", type: "date" },
 

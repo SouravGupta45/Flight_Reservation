@@ -2,7 +2,7 @@ let Booking = require("../models/booking");
 let User = require("../models/userDetails");
 let Flight = require("../models/flight");
 
-const Razorpay = require("razorpay");
+// const Razorpay = require("razorpay");
 const shortid = require("shortid");
 const crypto = require("crypto");
 var customId = require("custom-id");
